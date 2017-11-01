@@ -1,0 +1,105 @@
+<!DOCTYPE HTML>
+<!--[if lt IE 7]>
+<html class="ie6" lang="zh-cn"><![endif]-->
+<!--[if IE 7]>
+<html class="ie7" lang="zh-cn"><![endif]-->
+<!--[if IE 8]>
+<html class="ie8" lang="zh-cn"><![endif]-->
+<!--[if IE 9]>
+<html class="ie9" lang="zh-cn"><![endif]-->
+<!--[if gt IE 9]>
+<html lang="zh-cn"><![endif]-->
+<!--[if !IE]>-->
+<html lang="zh-cn"><!--<![endif]-->
+<head>
+    <!--meta.jsp-->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content=""/>
+    <meta name="keywords" content="MCCMS前端集成, 关键字"/>
+    <meta name="author" content="Christina"/>
+    <title>  </title>
+    <link rel="stylesheet" type="text/css" href="image/style.css">
+    <link rel="stylesheet" type="text/css" href="image/H-ui.min.css"/>
+    <link rel="stylesheet" type="text/css" href="image/Hui-iconfont/iconfont.css"/>
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <script src="js/ie10-viewport-bug-workaround.js"></script>
+    <script src="js/jquery.validate.min.js" type="text/javascript" charset="utf-8"></script>
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.min.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+    <noscript>您的浏览器不支持JavaScript，请启动JavaScript或更换浏览器</noscript>
+    <!--end of meta.jsp-->
+</head>
+	<body>
+		<div class="header">
+			<span class="area">广州</span><span class="changeArea">[切换地区]</span>
+			<ul>
+				<li><a class="rborder" href="">首页</a></li>
+				<li><a class="rborder" href="">加入我们</a></li>
+				<li><a class="rborder" href="">关于我们</a></li>
+				<li><a class="login" href="">企业登录</a></li>
+			</ul>
+		</div>
+		<div class="title">
+			<div class="content">
+				<span class="text"><img src="image/task_phone.png"/>佣兵小镇任务管理平台 | 我的钱包</span>
+			</div>
+		</div>
+		<div class="main">
+			<div class="nav">佣兵小镇任务管理平台 > 钱包 > <a href="">充值</a></div>
+			<div class="wallet-recharge">
+				<form class="rechargeform">
+					<div class="money-input">
+						<label class="f-12">充值金额:</label>
+						<input type="text" name="money" class="radius w-200" placeholder="输入充值金额"/>元<i class="money"></i>
+					</div>
+					<div class="tt">请选择支付方式</div>
+					<ul class="list">
+			            <li id="zhifubao" class="current"><i class="Hui-iconfont">&#xe615;</i>
+			            	<div class="radius f-16">支付宝支付 </div>
+			            </li>
+			        </ul>
+			        <div class="pay-btn">
+				        <input type="submit" class="pay_now radius" value="立即支付">
+				    </div>
+			    </form>
+			</div>
+			<script type="text/javascript">
+				$().ready(function() {
+				/* 设置默认属性 */       
+				$.validator.setDefaults({       
+				    submitHandler: function(form) {    
+				        form.submit();    
+				    }       
+				});
+				$(".rechargeform").validate({
+				  		errorPlacement: function(error, element) {
+	                    // Append error within linked label
+	                    $( element )
+	                            .closest( "form" )
+	                            .find( "i[class='"+element.attr( "name" )+"']" )
+	                            .after( error );
+	               		},
+					    rules: {
+						    money:{
+					        	required: true,
+						    }
+					    },
+					    messages: {
+					    	money: {
+					        	required: "请输入充值金额",
+					      	}
+					    }
+				});
+			});
+			</script>
+		</div>
+		<div class="footer">
+			<p>版权信息：京ICP备12038410号-5  版权声明：佣兵小镇有限责任公司版权所有</p>
+		</div>
+	</body>
+</html>

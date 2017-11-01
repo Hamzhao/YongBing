@@ -1,0 +1,193 @@
+<!DOCTYPE HTML>
+<!--[if lt IE 7]>
+<html class="ie6" lang="zh-cn"><![endif]-->
+<!--[if IE 7]>
+<html class="ie7" lang="zh-cn"><![endif]-->
+<!--[if IE 8]>
+<html class="ie8" lang="zh-cn"><![endif]-->
+<!--[if IE 9]>
+<html class="ie9" lang="zh-cn"><![endif]-->
+<!--[if gt IE 9]>
+<html lang="zh-cn"><![endif]-->
+<!--[if !IE]>-->
+<html lang="zh-cn"><!--<![endif]-->
+<head>
+    <!--meta.jsp-->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content=""/>
+    <meta name="keywords" content="MCCMS前端集成, 关键字"/>
+    <meta name="author" content="Christina"/>
+    <title>佣兵小镇</title>
+    <link rel="stylesheet" type="text/css" href="image/style.css">
+    <link rel="stylesheet" type="text/css" href="image/H-ui.min.css"/>
+    <link rel="stylesheet" type="text/css" href="image/Hui-iconfont/iconfont.css"/>
+    <!--图片截取css-->
+    <link href="js/clipPhoto/css/cropper.min.css" rel="stylesheet">
+    <link href="js/clipPhoto/css/main.css" rel="stylesheet">
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/jquery.placeholder.min.js"></script>
+    <script src="js/ie10-viewport-bug-workaround.js"></script>
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.min.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+    <noscript>您的浏览器不支持JavaScript，请启动JavaScript或更换浏览器</noscript>
+    <!--end of meta.jsp-->
+</head>
+<body>
+<div class="header">
+    <span class="area">广州</span><span class="changeArea">[切换地区]</span>
+    <ul>
+        <li><a class="rborder" href="index.html">首页</a></li>
+        <li><a class="rborder" href="join-us.html">加入我们</a></li>
+        <li><a class="rborder" href="about-us.html">关于我们</a></li>
+        <li><a class="login" href="login.html">企业登录</a></li>
+    </ul>
+</div>
+<div class="title">
+    <div class="content">
+        <span class="text"><img src="image/task_phone.png"/>佣兵小镇任务管理平台  |  设置中心</span>
+    </div>
+</div>
+<div class="main-container">
+    <div class="position">佣兵小镇任务管理平台 > <span>设置中心</span></div>
+    <div class="setting-wrapper">
+        <div class="setting-title clearfix">
+            <div class="s-left left">账号设置</div>
+            <div class="s-right">修改密码</div>
+        </div>
+        <div class="clearfix">
+            <div class="setting-nav-wrap s-left left">
+                <a href="setting-info.html" class="setting-nav"><i class="set-icon s-icon1"></i> 修改资料</a>
+                <a href="setting-logo.html" class="setting-nav active"><i class="set-icon s-icon2"></i> 修改logo</a>
+                <a href="setting-pwd.html" class="setting-nav"><i class="set-icon s-icon3"></i> 修改密码</a>
+                <a href="setting-pay-pwd.html" class="setting-nav"><i class="set-icon s-icon4"></i> 更改支付密码</a>
+                <a href="setting-email.html" class="setting-nav"><i class="set-icon s-icon5"></i> 更改邮箱绑定</a>
+                <a href="setting-phone.html" class="setting-nav"><i class="set-icon s-icon6"></i> 更改手机绑定</a>
+                <a href="setting-apply-1.html" class="setting-nav"><i class="set-icon s-icon7"></i> 申请认证</a>
+            </div>
+            <div class="setting-content-wrap s-right">
+                <div class="current-logo">
+                    <div>当前头像：</div>
+                    <div class="logo-img"><img src="image/user-logo.jpg"></div>
+                </div>
+                <div class="htmleaf-container">
+                    <!-- Content -->
+                    <div class="clearfix">
+                        <div class="row">
+                            <div class="col-md-4 col-ms-1">
+                                <!-- <h3 class="page-header">图片显示:</h3> -->
+                                <div class="img-container">
+                                    <img src="image/picture-none.jpg" alt="Picture">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <!-- <h3 class="page-header">Preview:</h3> -->
+                                <div class="docs-preview clearfix">
+                                    <div class="img-preview preview-lg"></div>
+                                    <div class="img-preview preview-md"></div>
+                                    <div class="img-preview preview-sm"></div>
+                                    <!--<div class="img-preview preview-xs"></div>-->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12 docs-buttons">
+                                <!-- <h3 class="page-header">Toolbar:</h3> -->
+                                <div class="btn-group">
+                                    <button class="btn btn-primary" data-method="setDragMode" data-option="move" type="button">
+                                        <span class="docs-tooltip" data-toggle="tooltip">
+                                          <span class="icon icon-move"></span>
+                                        </span>
+                                        <span class="tooltip" style="display: none;">移动<span class="tooltip-arrow"></span></span>
+                                    </button>
+
+                                    <button class="btn btn-primary" data-method="setDragMode" data-option="crop" type="button">
+                                        <span class="docs-tooltip" data-toggle="tooltip">
+                                          <span class="icon icon-crop"></span>
+                                        </span>
+                                        <span class="tooltip" style="display: none;">截取<span class="tooltip-arrow"></span></span>
+                                    </button>
+                                    <button class="btn btn-primary" data-method="zoom" data-option="0.1" type="button">
+                                        <span class="docs-tooltip" data-toggle="tooltip">
+                                          <span class="icon icon-zoom-in"></span>
+                                        </span>
+                                        <span class="tooltip" style="display: none;">放大<span class="tooltip-arrow"></span></span>
+                                    </button>
+                                    <button class="btn btn-primary" data-method="zoom" data-option="-0.1" type="button">
+                                        <span class="docs-tooltip" data-toggle="tooltip">
+                                          <span class="icon icon-zoom-out"></span>
+                                        </span>
+                                        <span class="tooltip" style="display: none;">缩小<span class="tooltip-arrow"></span></span>
+                                    </button>
+                                    <button class="btn btn-primary" data-method="rotate" data-option="-45" type="button">
+                                        <span class="docs-tooltip" data-toggle="tooltip">
+                                          <span class="icon icon-rotate-left"></span>
+                                        </span>
+                                        <span class="tooltip" style="display: none;width: 100px;margin-left: -50px;">逆时针旋转45度<span class="tooltip-arrow"></span></span>
+                                    </button>
+                                    <button class="btn btn-primary" data-method="rotate" data-option="45" type="button">
+                                        <span class="docs-tooltip" data-toggle="tooltip">
+                                          <span class="icon icon-rotate-right"></span>
+                                        </span>
+                                        <span class="tooltip" style="display: none;width: 100px;margin-left: -50px;">顺时针旋转45度<span class="tooltip-arrow"></span></span>
+                                    </button>
+                                    <button class="btn btn-primary" data-method="disable" type="button">
+                                        <span class="docs-tooltip" data-toggle="tooltip">
+                                          <span class="icon icon-lock"></span>
+                                        </span>
+                                        <span class="tooltip" style="display: none;width: 60px;margin-left: -30px;">不可编辑<span class="tooltip-arrow"></span></span>
+                                    </button>
+                                    <button class="btn btn-primary" data-method="enable" type="button">
+                                        <span class="docs-tooltip" data-toggle="tooltip">
+                                          <span class="icon icon-unlock"></span>
+                                        </span>
+                                        <span class="tooltip" style="display: none;width: 50px;margin-left: -25px;">可编辑<span class="tooltip-arrow"></span></span>
+                                    </button>
+                                    <button class="btn btn-primary" data-method="clear" type="button">
+                                        <span class="docs-tooltip" data-toggle="tooltip">
+                                          <span class="icon icon-remove"></span>
+                                        </span>
+                                        <span class="tooltip" style="display: none;">清除<span class="tooltip-arrow"></span></span>
+                                    </button>
+                                    <button class="btn btn-primary" data-method="reset" type="button">
+                                        <span class="docs-tooltip" data-toggle="tooltip">
+                                          <span class="icon icon-refresh"></span>
+                                        </span>
+                                        <span class="tooltip" style="display: none;">重置<span class="tooltip-arrow"></span></span>
+                                    </button>
+                                    <label class="btn btn-primary" for="inputImage">
+                                        <input class="sr-only hidden" id="inputImage" name="file" type="file" accept="image/*">
+                                        <span class="docs-tooltip" data-toggle="tooltip">
+                                          <span class="icon icon-upload"></span>
+                                        </span>
+                                        <span class="tooltip" style="display: none;width: 90px;margin-left: -45px;">选择上传图片<span class="tooltip-arrow"></span></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-2">
+                                <a href="javascript:void(0)" class="logo-set-btn">保存</a>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="footer">
+    <p>版权信息：京ICP备12038410号-5 版权声明：佣兵小镇有限责任公司版权所有</p>
+</div>
+<!--图片截取js-->
+<script src="js/clipPhoto/js/cropper.min.js"></script>
+<script src="js/clipPhoto/js/main.js"></script>
+</body>
+
+</html>

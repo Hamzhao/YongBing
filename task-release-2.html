@@ -1,0 +1,162 @@
+<!DOCTYPE HTML>
+<!--[if lt IE 7]>
+<html class="ie6" lang="zh-cn"><![endif]-->
+<!--[if IE 7]>
+<html class="ie7" lang="zh-cn"><![endif]-->
+<!--[if IE 8]>
+<html class="ie8" lang="zh-cn"><![endif]-->
+<!--[if IE 9]>
+<html class="ie9" lang="zh-cn"><![endif]-->
+<!--[if gt IE 9]>
+<html lang="zh-cn"><![endif]-->
+<!--[if !IE]>-->
+<html lang="zh-cn"><!--<![endif]-->
+<head>
+    <!--meta.jsp-->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content=""/>
+    <meta name="keywords" content="MCCMS前端集成, 关键字"/>
+    <meta name="author" content="Christina"/>
+    <title>  </title>
+    <link rel="stylesheet" type="text/css" href="image/style.css">
+    <link rel="stylesheet" type="text/css" href="image/H-ui.min.css"/>
+    <link rel="stylesheet" type="text/css" href="image/Hui-iconfont/iconfont.css"/>
+    <script src="js/jquery-1.11.3.min.js"></script>
+	<script src="js/common.js"></script>
+	<script src="js/jquery.placeholder.min.js"></script>
+    <script src="js/ie10-viewport-bug-workaround.js"></script>
+    <script src="js/jquery.validate.min.js"></script>
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.min.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+    <noscript>您的浏览器不支持JavaScript，请启动JavaScript或更换浏览器</noscript>
+    <!--end of meta.jsp-->
+</head>
+	<body>
+		<div class="header">
+			<span class="area">广州</span><span class="changeArea">[切换地区]</span>
+			<ul>
+				<li><a class="rborder" href="">首页</a></li>
+				<li><a class="rborder" href="">加入我们</a></li>
+				<li><a class="rborder" href="">关于我们</a></li>
+				<li><a class="login" href="">企业登录</a></li>
+			</ul>
+		</div>
+		<div class="title">
+			<div class="content">
+				<span class="text"><img src="image/task_phone.png"/>佣兵小镇任务管理平台 | 发布佣兵任务</span>
+			</div>
+		</div>
+		<div class="main">
+			<div class="nav">佣兵小镇任务管理平台 > <a href="">发布佣兵任务</a></div>
+			<div class="fill-in">
+				<div class="schedule">
+					<img src="image/step2.png"/>
+				</div>
+				<div class="ties">注：佣兵任务是指对方用手机操作（文本、图片、下载等）就能完成的任务，如收集门店照片，应用市场点评，软文转发推广，新产品试用等等<span>×</span></div>
+				<form id="prepayform" action="task-release-3.html">
+					<p class="tt">任务信息</p>
+					<div class="task-msg pos-r">
+						<div class="t-name">
+							<span>任务名称：</span>
+							<span>佣兵小镇派单任务</span>
+						</div>
+						<div class="t-amount">
+							<span>任务数量：</span>
+							<span class="number">100</span>个
+						</div>
+						<div class="t-price">
+							<span>任务单价：</span>
+							<span><font class="price">9.0</font>元/个</span>
+						</div>
+						<div class="total-price pos-a">
+							<strong>总额：<span>900.00</span>元</strong>
+							<span class="gs">预付款总额=任务数量 * 任务单价</span>
+						</div>
+					</div>
+					<p class="tt">选择支付方式</p>
+					<ul class="list">
+		              <li class="current" id="qianbao"><i class="Hui-iconfont">&#xe615;</i>
+		                <div class="radius f-16">我的钱包 <span class="ye f-14">余额：<span class="ye-m">360.00</span>元 </span>
+		                	<span class="paying">支付 <span class="num">900.00</span>元</span>
+		                </div>
+		              </li>
+		              <li id="zhifubao"><i class="Hui-iconfont">&#xe614;</i>
+		                <div class="radius f-16">支付宝支付 
+		                	<span class="paying">支付 <span class="num">900.00</span>元</span>
+		                </div>
+		              </li>
+		            </ul>
+		            <div class="paypass">
+			            <div class="input-paypass">
+			            	<p class="tit">请输入支付密码</p>
+			            	<div>
+			               		<input type="password" id="ppwd" name="ppwd" class="radius"/>
+			                	<a href="" class="forgetPass">忘记密码？</a>
+			                	<i class="ppwd"></i>
+			            	</div>
+			            </div>
+			            <div class="pay-btn">
+			            	<input type="submit" class="pay_now radius" value="立即支付">
+			            	<a href="task-release-1.html" class="back radius w-100">返回上一步</a>
+			            </div>
+			        </div>
+				</form>
+			</div>
+		</div>
+		<div class="footer">
+			<p>版权信息：京ICP备12038410号-5  版权声明：佣兵小镇有限责任公司版权所有</p>
+		</div>
+		<script type="text/javascript">
+			$(".ties span").click(function(){
+				$(this).parent().css("display","none");
+			});
+			$(".list li").click(function(){
+				$(".list li").removeClass("current");
+				$(".list li i").html("&#xe614;");
+				$(this).addClass("current");
+				$(".list li.current i").html("&#xe615;");
+				if ($(this).attr("id")=="qianbao") {
+					$(".input-paypass").css("display","block");
+				} else{
+					$(".input-paypass").css("display","none");
+				}
+			})
+			$().ready(function() {
+			/* 设置默认属性 */       
+				$.validator.setDefaults({       
+				    submitHandler: function(form) {    
+				        form.submit();    
+				    }       
+				});
+				$("#prepayform").validate({
+				  		errorPlacement: function(error, element) {
+	                    // Append error within linked label
+	                    $( element )
+	                            .closest( "form" )
+	                            .find( "i[class='"+element.attr( "name" )+"']" )
+	                            .after( error );
+	               		},
+					    rules: {
+						    ppwd:{
+					        	required: true,
+					        	minlength: 6,
+					        	maxlength: 6,
+						    }
+					    },
+					    messages: {
+					    	ppwd: {
+					        	required: "请输入支付密码",
+					        	minlength: "请输入6位数的支付密码",
+					        	maxlength: "请输入6位数的支付密码"
+					      }
+					    }
+				});
+			});
+		</script>
+	</body>
+</html>

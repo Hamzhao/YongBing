@@ -1,0 +1,365 @@
+<!DOCTYPE HTML>
+<!--[if lt IE 7]>
+<html class="ie6" lang="zh-cn"><![endif]-->
+<!--[if IE 7]>
+<html class="ie7" lang="zh-cn"><![endif]-->
+<!--[if IE 8]>
+<html class="ie8" lang="zh-cn"><![endif]-->
+<!--[if IE 9]>
+<html class="ie9" lang="zh-cn"><![endif]-->
+<!--[if gt IE 9]>
+<html lang="zh-cn"><![endif]-->
+<!--[if !IE]>-->
+<html lang="zh-cn"><!--<![endif]-->
+<head>
+    <!--meta.jsp-->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content=""/>
+    <meta name="keywords" content="MCCMS前端集成, 关键字"/>
+    <meta name="author" content="Christina"/>
+    <title>  </title>
+    <link rel="stylesheet" type="text/css" href="image/style.css">
+    <link rel="stylesheet" type="text/css" href="image/H-ui.min.css"/>
+    <link rel="stylesheet" type="text/css" href="image/Hui-iconfont/iconfont.css"/>
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <script src="js/ie10-viewport-bug-workaround.js"></script>
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.min.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+    <noscript>您的浏览器不支持JavaScript，请启动JavaScript或更换浏览器</noscript>
+    <!--end of meta.jsp-->
+</head>
+	<body>
+		<div class="header">
+			<span class="area">广州</span><span class="changeArea">[切换地区]</span>
+			<ul>
+				<li><a class="rborder" href="">首页</a></li>
+				<li><a class="rborder" href="">加入我们</a></li>
+				<li><a class="rborder" href="">关于我们</a></li>
+				<li><a class="login" href="">企业登录</a></li>
+			</ul>
+		</div>
+		<div class="title">
+			<div class="content">
+				<span class="text"><img src="image/task_phone.png"/>佣兵小镇任务管理平台 | 管理审核</span>
+			</div>
+		</div>
+		<div class="main">
+			<div class="audit clearfix">
+				<ul class="selects">
+					<li id="auditing" class="col-2 current">待审核（38）</li>
+					<li id="audit-pass" class="col-2">审核通过（0）</li>
+					<li id="audit-failed" class="col-2">审核拒接（0）</li>
+					<li id="submiting" class="col-2">待提交（1）</li>
+					<li class="col-2"></li>
+					<li class="col-2 text-r"><span class="Hui-iconfont">&#xe640;</span>导入任务完成情况</li>
+				</ul>
+				<script type="text/javascript">
+						$(".selects li").click(function(){
+							$(".selects li").removeClass("current");
+							$(this).addClass("current");
+							$(".auditing,.audit-pass,.audit-failed,.submiting").css("display","none");
+							var i = $(this).attr("id");
+							$("."+i).css("display","block");
+						})
+					</script>
+				<form class="auditing">
+					<div class="all">
+						<input type="checkbox" name="all" id="all"/>全选
+						<input type="button" class="radius" value="全部通过" disabled onclick="return false;"/>
+					</div>
+					<div class="audit-data clearfix">
+						<div class="aside left">
+							<div class="text-c">基础信息</div>
+							<ul>
+								<li class="current">
+									<dt><input type="checkbox" name="check"/>张三</dt>
+									<dd>2016-8-9 18:00</dd>
+								</li>
+								<li>
+									<dt><input type="checkbox" name="check"/>李四</dt>
+									<dd>2016-8-9 18:00</dd>
+								</li>
+								<li>
+									<dt><input type="checkbox" name="check"/>唐五</dt>
+									<dd>2016-8-9 18:00</dd>
+								</li>
+								<li>
+									<dt><input type="checkbox" name="check"/>路六</dt>
+									<dd>2016-8-9 18:00</dd>
+								</li>
+								<li>
+									<dt><input type="checkbox" name="check"/>韩七</dt>
+									<dd>2016-8-9 18:00</dd>
+								</li>
+								<li>
+									<dt><input type="checkbox" name="check"/>王八</dt>
+									<dd>2016-8-9 18:00</dd>
+								</li>
+							</ul>
+							<div class="page-box">
+								<span class="pageNo">1/4</span>
+								<span class="page-btn right">
+									<button class="pre Hui-iconfont va-t" onclick="return false;">&#xe69b;</button>
+									<button class="after Hui-iconfont va-t" onclick="return false;">&#xe69a;</button>
+								</span>
+							</div>
+							<div class="all">
+								<input type="checkbox" name="all" id="all"/>全选
+								<input type="button" class="radius" value="全部通过" disabled onclick="return false;"/>
+							</div>
+						</div>
+						<div class="audit-content right">
+							<div>提交内容</div>
+							<div class="submit-content">
+								<span class="user">姓名：李氏小三</span>
+								<span class="tel">手机号码：13820059752</span>
+								<p>提交收到短信截图：</p>
+								<div class="msg-img"><img src="image/msg-img.png"/></div>
+							</div>
+							<div class="btn-box">
+								<button class="radius" onclick="return false;">通过</button>
+								<button class="radius" onclick="return false;">下一个</button>
+								<button class="radius" onclick="return false;">拒绝</button>
+							</div>
+						</div>
+					</div>
+				</form>
+				<form class="audit-pass" style="display:none;">
+					<div class="all">
+						<input type="checkbox" name="all" id="all"/>全选
+						<input type="button" class="radius" value="全部通过" disabled onclick="return false;"/>
+					</div>
+					<div class="audit-data clearfix">
+						<div class="aside left">
+							<div class="text-c">基础信息</div>
+							<ul>
+								<li class="current">
+									<dt><input type="checkbox" name="check"/>关羽</dt>
+									<dd>2016-8-9 18:00</dd>
+								</li>
+								<li>
+									<dt><input type="checkbox" name="check"/>马云</dt>
+									<dd>2016-8-9 18:00</dd>
+								</li>
+								<li>
+									<dt><input type="checkbox" name="check"/>马超</dt>
+									<dd>2016-8-9 18:00</dd>
+								</li>
+								<li>
+									<dt><input type="checkbox" name="check"/>马丹</dt>
+									<dd>2016-8-9 18:00</dd>
+								</li>
+								<li>
+									<dt><input type="checkbox" name="check"/>麻花藤</dt>
+									<dd>2016-8-9 18:00</dd>
+								</li>
+								<li>
+									<dt><input type="checkbox" name="check"/>王八</dt>
+									<dd>2016-8-9 18:00</dd>
+								</li>
+							</ul>
+							<div class="page-box">
+								<span class="pageNo">1/4</span>
+								<span class="page-btn right">
+									<button class="pre Hui-iconfont va-t" onclick="return false;">&#xe69b;</button>
+									<button class="after Hui-iconfont va-t" onclick="return false;">&#xe69a;</button>
+								</span>
+							</div>
+							<div class="all">
+								<input type="checkbox" name="all" id="all"/>全选
+								<input type="button" class="radius" value="全部通过" disabled onclick="return false;"/>
+							</div>
+						</div>
+						<div class="audit-content right">
+							<div>提交内容</div>
+							<div class="submit-content">
+								<span class="user">姓名：李氏小三</span>
+								<span class="tel">手机号码：13820059752</span>
+								<p>提交收到短信截图：</p>
+								<div class="msg-img"><img src="image/msg-img.png"/></div>
+							</div>
+							<div class="btn-box">
+								<button class="radius" onclick="return false;">通过</button>
+								<button class="radius" onclick="return false;">下一个</button>
+								<button class="radius" onclick="return false;">拒绝</button>
+							</div>
+						</div>
+					</div>
+				</form>
+				<form class="audit-failed" style="display:none;">
+					<div class="all">
+						<input type="checkbox" name="all" id="all"/>全选
+						<input type="button" class="radius" value="全部通过" disabled onclick="return false;"/>
+					</div>
+					<div class="audit-data clearfix">
+						<div class="aside left">
+							<div class="text-c">基础信息</div>
+							<ul>
+								<li class="current">
+									<dt><input type="checkbox" name="check"/>张飞</dt>
+									<dd>2016-8-9 18:00</dd>
+								</li>
+								<li>
+									<dt><input type="checkbox" name="check"/>张三丰</dt>
+									<dd>2016-8-9 18:00</dd>
+								</li>
+								<li>
+									<dt><input type="checkbox" name="check"/>张无忌</dt>
+									<dd>2016-8-9 18:00</dd>
+								</li>
+								<li>
+									<dt><input type="checkbox" name="check"/>张艺谋</dt>
+									<dd>2016-8-9 18:00</dd>
+								</li>
+								<li>
+									<dt><input type="checkbox" name="check"/>张国荣</dt>
+									<dd>2016-8-9 18:00</dd>
+								</li>
+								<li>
+									<dt><input type="checkbox" name="check"/>王八</dt>
+									<dd>2016-8-9 18:00</dd>
+								</li>
+							</ul>
+							<div class="page-box">
+								<span class="pageNo">1/4</span>
+								<span class="page-btn right">
+									<button class="pre Hui-iconfont va-t" onclick="return false;">&#xe69b;</button>
+									<button class="after Hui-iconfont va-t" onclick="return false;">&#xe69a;</button>
+								</span>
+							</div>
+							<div class="all">
+								<input type="checkbox" name="all" id="all"/>全选
+								<input type="button" class="radius" value="全部通过" disabled onclick="return false;"/>
+							</div>
+						</div>
+						<div class="audit-content right">
+							<div>提交内容</div>
+							<div class="submit-content">
+								<span class="user">姓名：李氏小三</span>
+								<span class="tel">手机号码：13820059752</span>
+								<p>提交收到短信截图：</p>
+								<div class="msg-img"><img src="image/msg-img.png"/></div>
+							</div>
+							<div class="btn-box">
+								<button class="radius" onclick="return false;">通过</button>
+								<button class="radius" onclick="return false;">下一个</button>
+								<button class="radius" onclick="return false;">拒绝</button>
+							</div>
+						</div>
+					</div>
+				</form>
+				<form class="submiting" style="display:none;">
+					<div class="all">
+						<input type="checkbox" name="all" id="all"/>全选
+						<input type="button" class="radius" value="全部通过" disabled onclick="return false;"/>
+					</div>
+					<div class="audit-data clearfix">
+						<div class="aside left">
+							<div class="text-c">基础信息</div>
+							<ul>
+								<li class="current">
+									<dt><input type="checkbox" name="check"/>李氏小三</dt>
+									<dd>2016-8-9 18:00</dd>
+								</li>
+								<li>
+									<dt><input type="checkbox" name="check"/>郭氏小四</dt>
+									<dd>2016-8-9 18:00</dd>
+								</li>
+								<li>
+									<dt><input type="checkbox" name="check"/>唐氏小五</dt>
+									<dd>2016-8-9 18:00</dd>
+								</li>
+								<li>
+									<dt><input type="checkbox" name="check"/>路氏小六</dt>
+									<dd>2016-8-9 18:00</dd>
+								</li>
+								<li>
+									<dt><input type="checkbox" name="check"/>韩氏小七</dt>
+									<dd>2016-8-9 18:00</dd>
+								</li>
+								<li>
+									<dt><input type="checkbox" name="check"/>王氏小八</dt>
+									<dd>2016-8-9 18:00</dd>
+								</li>
+							</ul>
+							<div class="page-box">
+								<span class="pageNo">1/4</span>
+								<span class="page-btn right">
+									<button class="pre Hui-iconfont va-t" onclick="return false;">&#xe69b;</button>
+									<button class="after Hui-iconfont va-t" onclick="return false;">&#xe69a;</button>
+								</span>
+							</div>
+							<div class="all">
+								<input type="checkbox" name="all" id="all"/>全选
+								<input type="button" class="radius" value="全部通过" disabled onclick="return false;"/>
+							</div>
+						</div>
+						<div class="audit-content right">
+							<div>提交内容</div>
+							<div class="submit-content">
+								<span class="user">姓名：李氏小三</span>
+								<span class="tel">手机号码：13820059752</span>
+								<p>提交收到短信截图：</p>
+								<div class="msg-img"><img src="image/msg-img.png"/></div>
+							</div>
+							<div class="btn-box">
+								<button class="radius" onclick="return false;">通过</button>
+								<button class="radius" onclick="return false;">下一个</button>
+								<button class="radius" onclick="return false;">拒绝</button>
+							</div>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+		<div class="footer">
+			<p>版权信息：京ICP备12038410号-5  版权声明：佣兵小镇有限责任公司版权所有</p>
+		</div>
+		<script type="text/javascript">
+			$(".audit-data .aside ul li").click(function(){
+				$(".audit-data .aside ul li").removeClass("current");
+				$(this).addClass("current");
+				$(".user").text("姓名："+$(this).children("dt").text());
+			})
+			$(function(){
+				$(".auditing input[name='all']").click(function(){
+         			$('.auditing :checkbox').prop("checked", $(this).prop("checked"));
+					if ($(this).is(":checked")) {
+						$(".auditing .all input[type='button']").css({background:"#41d05c",color:"white"}).removeAttr("disabled");
+					} else{
+						$(".auditing .all input[type='button']").css({background:"#e1e1e1",color:"#555555"}).attr("disabled","disabled");
+					}
+     			});
+     			$(".audit-pass input[name='all']").click(function(){
+         			$('.audit-pass :checkbox').prop("checked", $(this).prop("checked"));
+					if ($(this).is(":checked")) {
+						$(".audit-pass .all input[type='button']").css({background:"#41d05c",color:"white"}).removeAttr("disabled");
+					} else{
+						$(".audit-pass .all input[type='button']").css({background:"#e1e1e1",color:"#555555"}).attr("disabled","disabled");
+					}
+     			});
+     			$(".audit-failed input[name='all']").click(function(){
+         			$('.audit-failed :checkbox').prop("checked", $(this).prop("checked"));
+					if ($(this).is(":checked")) {
+						$(".audit-failed .all input[type='button']").css({background:"#41d05c",color:"white"}).removeAttr("disabled");
+					} else{
+						$(".audit-failed .all input[type='button']").css({background:"#e1e1e1",color:"#555555"}).attr("disabled","disabled");
+					}
+     			});
+     			$(".submiting input[name='all']").click(function(){
+         			$('.submiting :checkbox').prop("checked", $(this).prop("checked"));
+					if ($(this).is(":checked")) {
+						$(".submiting .all input[type='button']").css({background:"#41d05c",color:"white"}).removeAttr("disabled");
+					} else{
+						$(".submiting .all input[type='button']").css({background:"#e1e1e1",color:"#555555"}).attr("disabled","disabled");
+					}
+     			});
+			})
+		</script>
+	</body>
+</html>

@@ -1,0 +1,220 @@
+<!DOCTYPE HTML>
+<!--[if lt IE 7]>
+<html class="ie6" lang="zh-cn"><![endif]-->
+<!--[if IE 7]>
+<html class="ie7" lang="zh-cn"><![endif]-->
+<!--[if IE 8]>
+<html class="ie8" lang="zh-cn"><![endif]-->
+<!--[if IE 9]>
+<html class="ie9" lang="zh-cn"><![endif]-->
+<!--[if gt IE 9]>
+<html lang="zh-cn"><![endif]-->
+<!--[if !IE]>-->
+<html lang="zh-cn"><!--<![endif]-->
+<head>
+    <!--meta.jsp-->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content=""/>
+    <meta name="keywords" content="MCCMS前端集成, 关键字"/>
+    <meta name="author" content="Christina"/>
+    <title>  </title>
+    <link rel="stylesheet" type="text/css" href="image/style.css">
+    <link rel="stylesheet" type="text/css" href="image/H-ui.min.css"/>
+    <link rel="stylesheet" type="text/css" href="image/Hui-iconfont/iconfont.css"/>
+    <script src="js/jquery-1.11.3.min.js"></script>
+	<script src="js/common.js"></script>
+	<script src="js/jquery.placeholder.min.js"></script>
+    <script src="js/ie10-viewport-bug-workaround.js"></script>
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.min.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+    <noscript>您的浏览器不支持JavaScript，请启动JavaScript或更换浏览器</noscript>
+    <!--end of meta.jsp-->
+</head>
+	<body>
+		<div class="header">
+			<span class="area">广州</span><span class="changeArea">[切换地区]</span>
+			<ul>
+				<li><a class="rborder" href="">首页</a></li>
+				<li><a class="rborder" href="">加入我们</a></li>
+				<li><a class="rborder" href="">关于我们</a></li>
+				<li><a class="login" href="">企业登录</a></li>
+			</ul>
+		</div>
+		<div class="title">
+			<div class="content">
+				<span class="text"><img src="image/task_phone.png"/>佣兵小镇任务管理平台</span>
+				<button class="btn btn-warning radius"><i class="Hui-iconfont">&#xe692;</i>发布任务</button>
+			</div>
+		</div>
+		<div class="main">
+			<ul class="data">
+				<li class="col-4">
+					<span>广州市巴拉拉商务服务公司</span><button class="pass radius">已认证</button>
+					<br />
+					<a href="">设置中心></a>
+				</li>
+				<li class="lborder col-2">
+					<span>钱包余额：</span><button class="cz radius">充值</button><a href="task-wallet.html" style="font-size: 12px;margin-left: 5px;color: #0074D9;">进入钱包</a>
+					<p>107.5元</p>
+				</li>
+				<li class="lborder col-2">
+					<span>进行的任务：</span>
+					<p>0</p>
+				</li>
+				<li class="lborder col-4">
+					<span>等待处理的提交量（总）：</span>
+					<p>0</p>
+				</li>
+			</ul>
+			<div class="notice">
+				<span><font>*</font>注：点击<a href="">“查看详情”</a>可查看对应的任务明细</span>
+				<a  href="tencent://message/?uin=800005602&Site=http://qbar.qq.com/application/&Menu=yes"  ><button class="radius"><i class="Hui-iconfont">&#xe633;</i>佣兵任务小助手</button></a>
+			</div>
+			<div class="tables">
+				<ul class="thead clearfix">
+					<li class="w-104">状态</li>
+					<li class="w-200">任务标题</li>
+					<li class="w-100">单价量</li>
+					<li class="w-200">开始时间</li>
+					<li class="w-200">截止时间</li>
+					<li class="w-100">正在申请</li>
+					<li class="w-100">已通过量</li>
+					<li class="w-100">待处理</li>
+					<li class="w-100"></li>
+				</ul>
+				<div class="data_show clearfix ">
+					<ul class="rowH left w-104">
+						<li id="now" class="current">
+							<span class="Hui-iconfont">&#xe679;</span>
+							<span>正进行</span>
+							<span>(1)</span>
+						</li>
+						<li id="wait">
+							<span class="Hui-iconfont">&#xe690;</span>
+							<span>待通过</span>
+							<span>(0)</span>
+						</li>
+						<li id="end">
+							<span class="Hui-iconfont">&#xe674;</span>
+							<span>已结束</span>
+							<span>(0)</span>
+						</li>
+					</ul>
+					<script type="text/javascript">
+						$(".rowH li").click(function(){
+							$(".rowH li").removeClass("current");
+							$(this).addClass("current");
+							$(".now,.wait,.end").css("display","none");
+							var i = $(this).attr("id");
+							$("."+i).css("display","block");
+						})
+					</script>
+					<div class="now left">
+						<div class="data-row">
+							<div class="w-200">有奖问卷</div>
+							<div class="w-100">￥2</div>
+							<div class="w-200">2016-07-18</div>
+							<div class="w-200 Hui-iconfont">2016-08-05 <img src="image/icon1.png"/></div>
+							<div class="w-100">10</div>
+							<div class="w-100"><button class="radius increase">增量续费</button></div>
+							<div class="w-100"><button class="radius maskEnd">结束任务</button></div>
+							<div class="w-100"><button class="radius manage">进入管理</button></div>
+						</div>
+						<div class="data-row">
+							<div class="w-200">有奖问卷</div>
+							<div class="w-100">￥2</div>
+							<div class="w-200">2016-07-18</div>
+							<div class="w-200 Hui-iconfont">2016-08-05 <img src="image/icon1.png"/></div>
+							<div class="w-100">10</div>
+							<div class="w-100"><button class="radius increase">增量续费</button></div>
+							<div class="w-100"><button class="radius maskEnd">结束任务</button></div>
+							<div class="w-100"><button class="radius manage">进入管理</button></div>
+						</div>
+						<div class="data-row">
+							<div class="w-200">有奖问卷</div>
+							<div class="w-100">￥2</div>
+							<div class="w-200">2016-07-18</div>
+							<div class="w-200 Hui-iconfont">2016-08-05 <img src="image/icon1.png"/></div>
+							<div class="w-100">10</div>
+							<div class="w-100"><button class="radius increase">增量续费</button></div>
+							<div class="w-100"><button class="radius maskEnd">结束任务</button></div>
+							<div class="w-100"><button class="radius manage">进入管理</button></div>
+						</div>
+						<div class="data-row">
+							<div class="w-200">有奖问卷</div>
+							<div class="w-100">￥2</div>
+							<div class="w-200">2016-07-18</div>
+							<div class="w-200 Hui-iconfont">2016-08-05 <img src="image/icon1.png"/></div>
+							<div class="w-100">10</div>
+							<div class="w-100"><button class="radius increase">增量续费</button></div>
+							<div class="w-100"><button class="radius maskEnd">结束任务</button></div>
+							<div class="w-100"><button class="radius manage">进入管理</button></div>
+						</div>
+						<div class="data-row">
+							<div class="w-200">有奖问卷</div>
+							<div class="w-100">￥2</div>
+							<div class="w-200">2016-07-18</div>
+							<div class="w-200 Hui-iconfont">2016-08-05 <img src="image/icon1.png"/></div>
+							<div class="w-100">10</div>
+							<div class="w-100"><button class="radius increase">增量续费</button></div>
+							<div class="w-100"><button class="radius maskEnd">结束任务</button></div>
+							<div class="w-100"><button class="radius manage">进入管理</button></div>
+						</div>
+						<div class="data-row">
+							<div class="w-200">有奖问卷</div>
+							<div class="w-100">￥2</div>
+							<div class="w-200">2016-07-18</div>
+							<div class="w-200 Hui-iconfont">2016-08-05 <img src="image/icon1.png"/></div>
+							<div class="w-100">10</div>
+							<div class="w-100"><button class="radius increase">增量续费</button></div>
+							<div class="w-100"><button class="radius maskEnd">结束任务</button></div>
+							<div class="w-100"><button class="radius manage">进入管理</button></div>
+						</div>
+						<div class="data-row">
+							<div class="w-200">有奖问卷</div>
+							<div class="w-100">￥2</div>
+							<div class="w-200">2016-07-18</div>
+							<div class="w-200 Hui-iconfont">2016-08-05 <img src="image/icon1.png"/></div>
+							<div class="w-100">10</div>
+							<div class="w-100"><button class="radius increase">增量续费</button></div>
+							<div class="w-100"><button class="radius maskEnd">结束任务</button></div>
+							<div class="w-100"><button class="radius manage">进入管理</button></div>
+						</div>
+						<div class="data-row">
+							<div class="w-200">有奖问卷</div>
+							<div class="w-100">￥2</div>
+							<div class="w-200">2016-07-18</div>
+							<div class="w-200 Hui-iconfont">2016-08-05 <img src="image/icon1.png"/></div>
+							<div class="w-100">10</div>
+							<div class="w-100"><button class="radius increase">增量续费</button></div>
+							<div class="w-100"><button class="radius maskEnd">结束任务</button></div>
+							<div class="w-100"><button class="radius manage">进入管理</button></div>
+						</div>
+						<div class="center-page right"></div>
+					</div>
+					<div class="wait"></div>
+					<div class="end"></div>
+				</div>
+			</div>
+		</div>
+		<div class="footer">
+			<p>版权信息：京ICP备12038410号-5  版权声明：佣兵小镇有限责任公司版权所有</p>
+		</div>
+		<!--调用page插件-->
+		<script src="js/page.js"></script>
+		<script>
+			$(".center-page").createPage({
+				pageCount:10,
+				current:1,
+				backFn:function(p){
+					console.log(p);
+				}
+			});
+		</script>
+	</body>
+</html>

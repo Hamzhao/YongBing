@@ -1,0 +1,307 @@
+<!DOCTYPE HTML>
+<!--[if lt IE 7]>
+<html class="ie6" lang="zh-cn"><![endif]-->
+<!--[if IE 7]>
+<html class="ie7" lang="zh-cn"><![endif]-->
+<!--[if IE 8]>
+<html class="ie8" lang="zh-cn"><![endif]-->
+<!--[if IE 9]>
+<html class="ie9" lang="zh-cn"><![endif]-->
+<!--[if gt IE 9]>
+<html lang="zh-cn"><![endif]-->
+<!--[if !IE]>-->
+<html lang="zh-cn"><!--<![endif]-->
+<head>
+    <!--meta.jsp-->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content=""/>
+    <meta name="keywords" content="MCCMS前端集成, 关键字"/>
+    <meta name="author" content="Christina"/>
+    <title>佣兵小镇</title>
+    <link rel="stylesheet" type="text/css" href="image/style.css">
+    <link rel="stylesheet" type="text/css" href="image/H-ui.min.css"/>
+    <link rel="stylesheet" type="text/css" href="image/Hui-iconfont/iconfont.css"/>
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/jquery.placeholder.min.js"></script>
+    <script src="js/ie10-viewport-bug-workaround.js"></script>
+    <script src="js/jquery.validate.min.js"></script>
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.min.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+    <noscript>您的浏览器不支持JavaScript，请启动JavaScript或更换浏览器</noscript>
+    <!--end of meta.jsp-->
+</head>
+<body>
+<div class="header">
+    <span class="area">广州</span><span class="changeArea">[切换地区]</span>
+    <ul>
+        <li><a class="rborder" href="index.html">首页</a></li>
+        <li><a class="rborder" href="join-us.html">加入我们</a></li>
+        <li><a class="rborder" href="about-us.html">关于我们</a></li>
+        <li><a class="login" href="login.html">企业登录</a></li>
+    </ul>
+</div>
+<div class="title">
+    <div class="content">
+        <span class="text"><img src="image/task_phone.png"/>佣兵小镇任务管理平台  |  设置中心</span>
+    </div>
+</div>
+<div class="main-container">
+    <div class="position">佣兵小镇任务管理平台 > <span>设置中心</span></div>
+    <div class="setting-wrapper">
+        <div class="setting-title clearfix">
+            <div class="s-left left">账号设置</div>
+            <div class="s-right">修改密码</div>
+        </div>
+        <div class="clearfix">
+            <div class="setting-nav-wrap s-left left">
+                <a href="setting-info.html" class="setting-nav"><i class="set-icon s-icon1"></i> 修改资料</a>
+                <a href="setting-logo.html" class="setting-nav"><i class="set-icon s-icon2"></i> 修改logo</a>
+                <a href="setting-pwd.html" class="setting-nav"><i class="set-icon s-icon3"></i> 修改密码</a>
+                <a href="setting-pay-pwd.html" class="setting-nav"><i class="set-icon s-icon4"></i> 更改支付密码</a>
+                <a href="setting-email.html" class="setting-nav"><i class="set-icon s-icon5"></i> 更改邮箱绑定</a>
+                <a href="setting-phone.html" class="setting-nav"><i class="set-icon s-icon6"></i> 更改手机绑定</a>
+                <a href="setting-apply-1.html" class="setting-nav active"><i class="set-icon s-icon7"></i> 申请认证</a>
+            </div>
+            <div class="setting-content-wrap s-right set-apply set-phone">
+                <div class="apply-tips clearfix">注：为防止黑心兼职中介，账号一经认证成功，可永久发布兼职信息。<span class="tip-close">×</span></div>
+                <div class="apply-step-wrap clearfix">
+                    <div class="apply-step clearfix">
+                        <div class="step-item left">
+                            <span class="ball cur">1</span>
+
+                            <div>填写申请资料</div>
+                        </div>
+                        <div class="step-item left">
+                            <span class="ball">2</span>
+
+                            <div>上传证明资料</div>
+                        </div>
+                        <div class="step-item left">
+                            <span class="ball"><img src="image/step-tick.png"></span>
+
+                            <div>等待运营审核</div>
+                        </div>
+                        <div class="step-line line1"></div>
+                        <div class="step-line line2"></div>
+                    </div>
+                </div>
+                <form id="apply-form" method="POST" action="setting-apply-2.html">
+                    <p class="apply-t">填写资料</p>
+
+                    <div class="ipt-wrap">
+                        <label for="license-num" class="lab"><span class="c-red">*</span>执照编号：</label>
+                        <input type="text" class="ipt" id="license-num" name="license-num" placeholder="请输入相应的营业执照注册号" autocomplete="off">
+                    </div>
+                    <div class="ipt-wrap">
+                        <label class="lab" for="sector"><span class="c-red">*</span>所属行业：</label>
+                        <select name="sector" id="sector" class="slt">
+                            <option value="房地产">房地产</option>
+                            <option value="">其他</option>
+                        </select>
+                    </div>
+                    <div class="ipt-wrap">
+                        <label class="lab" for="nature"><span class="c-red">*</span>机构性质：</label>
+                        <select name="nature" id="nature" class="slt">
+                            <option value="">国有企业</option>
+                            <option value="">其他</option>
+                        </select>
+                    </div>
+                    <div class="ipt-wrap">
+                        <label class="lab" for="scale">机构简介：</label>
+                        <select name="scale" id="scale" class="slt">
+                            <option value="">0-20人</option>
+                            <option value="">其他</option>
+                        </select>
+                    </div>
+                    <div class="ipt-wrap clearfix" style="height: 130px;">
+                        <label class="lab left" for="describe">任务描述：</label>
+                        <textarea class="txt left" id="describe" placeholder="请输入企业或机构名称（可展示到详情页，起到品牌推广作用）"></textarea>
+                    </div>
+
+                    <p class="apply-t">填写联系方式（同时为快速读取的兼职联系方式）</p>
+
+                    <div class="ipt-wrap">
+                        <label for="contact" class="lab"><span class="c-red">*</span>联系人：</label>
+                        <input type="text" class="ipt" id="contact" name="contact" placeholder="请输入联系人姓名" autocomplete="off">
+                    </div>
+                    <div class="ipt-wrap">
+                        <label for="contact-num" class="lab"><span class="c-red">*</span>联系电话：</label>
+                        <input type="text" class="ipt" id="contact-num" name="contact-num" placeholder="请输入联系电话" autocomplete="off">
+                    </div>
+                    <div class="ipt-wrap">
+                        <label class="lab"><span class="c-red">*</span>联系邮箱：</label>
+                        <span>719544004@qq.com（<a href="setting-email.html" class="change-email">更换邮箱？点击修改</a>）</span>
+                    </div>
+
+                    <p class="apply-t">企业或机构地址</p>
+
+                    <div class="ipt-wrap" id="city_select">
+                        <label class="lab"><span class="c-red">*</span>地址：</label>
+                        <select name="address" class="prov area-slt"></select>
+                        <select name="address" class="city area-slt" disabled="disabled"></select>
+                        <select name="address" class="dist area-slt" disabled="disabled"></select>
+                        <span class="color-blue">如没有您的城市，请联系客服QQ：8002008200</span>
+                    </div>
+                    <div class="ipt-wrap">
+                        <label class="ipt ipt_outer area-detail"> <span id="select-city">北京东城区</span> <input
+                                type="text" id="suggestId" placeholder="详细街道地址" size="20"></label>
+                        <span class="color-blue">（输入完后请敲回车键定位）</span>
+                    </div>
+                    <div class="ipt-wrap clearfix">
+                        <label class="lab left">地图标记：</label>
+
+                        <div id="map_box" class="map_box left"></div>
+                    </div>
+                    <a href="javascript:void(0);" class="set-phone-btn" onclick="$('#apply-form').submit()">下一步</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="footer">
+    <p>版权信息：京ICP备12038410号-5 版权声明：佣兵小镇有限责任公司版权所有</p>
+</div>
+<!--地址联动js-->
+<!--异步调用-->
+<script type="text/javascript" src="js/cityselect/jquery.cityselect.js"></script>
+<script type="text/javascript">
+    $(function () {
+        $("#city_select").citySelect({
+            prov: "北京",
+            city: "东城区",
+            dist: "",
+            nodata: "none"
+        });
+        $('select[name="address"]').change(function () {
+            setTimeout(setAddr, 5);
+            function setAddr() {
+                var _html = '';
+                for (var i = 0; i < 3; i++) {
+                    var content = $('select[name="address"]').eq(i).val();
+                    (content == null) ? content = '' : content;
+                    _html += content;
+                }
+                $('#select-city').html(_html);
+                // 将地址解析结果显示在地图上,并调整地图视野
+                myGeo.getPoint($('#select-city').html(), function (point) {
+                    if (point) {
+                        lng = point.lng;
+                        lat = point.lat;
+                        map.centerAndZoom(point, 16);
+                        map.clearOverlays();
+                        var mk = new BMap.Marker(point, {enableDragging: true, raiseOnDrag: true});
+                        map.addOverlay(mk);
+                        mk.addEventListener('dragend', function (e) {
+                            lng = e.point.lng;
+                            lat = e.point.lat;
+                        });
+                    }
+                });
+            }
+        });
+    });
+</script>
+<script src="http://api.map.baidu.com/api?v=2.0&ak=WGhKDLBbSjipmdKw0mCkD2Nw6nU23jdH" type="text/javascript"></script>
+<script type="text/javascript">
+    // 百度地图显示位置
+    var lng, lat, myGeo, map;
+    // 百度地图API功能
+    map = new BMap.Map("map_box");
+    var point = new BMap.Point(116.331398, 39.897445);
+    map.centerAndZoom(point, 12);
+    map.enableScrollWheelZoom();
+
+    function myFun(result) {
+        var cityName = result.name;
+        map.setCenter(cityName);
+        lng = result.center.lng;
+        lat = result.center.lat;
+        console.log(result);
+        var mk = new BMap.Marker(result.center, {enableDragging: true, raiseOnDrag: true});
+        map.addOverlay(mk);
+        mk.addEventListener('dragend', function (e) {
+            lng = e.point.lng;
+            lat = e.point.lat;
+        });
+    }
+    var myCity = new BMap.LocalCity();
+    myCity.get(myFun);
+
+    // 创建地址解析器实例
+    myGeo = new BMap.Geocoder();
+
+    $('#suggestId').keydown(function (e) {
+        if (e.keyCode == 13) {
+            // 将地址解析结果显示在地图上,并调整地图视野
+            myGeo.getPoint($('#select-city').html() + $(this).val(), function (point) {
+                if (point) {
+                    lng = point.lng;
+                    lat = point.lat;
+                    map.centerAndZoom(point, 16);
+                    map.clearOverlays();
+                    var mk = new BMap.Marker(point, {enableDragging: true, raiseOnDrag: true});
+                    map.addOverlay(mk);
+                    mk.addEventListener('dragend', function (e) {
+                        lng = e.point.lng;
+                        lat = e.point.lat;
+                    });
+                }
+            });
+        }
+    });
+</script>
+<!--表单验证-->
+<script type="text/javascript">
+    $("document").ready(function () {
+        jQuery.validator.addMethod("isPhone", function(value, element) {
+            return this.optional(element) || /((\d{11})|^((\d{7,8})|(\d{4}|\d{3})-(\d{7,8})|(\d{4}|\d{3})-(\d{7,8})-(\d{4}|\d{3}|\d{2}|\d{1})|(\d{7,8})-(\d{4}|\d{3}|\d{2}|\d{1}))$)/.test(value);
+        }, "请填写正确的电话号码");
+        $("#apply-form").validate({
+            onfocusout: function (element) {
+                $(element).valid();
+            },
+            onkeyup: false,
+            rules: {
+                'contact-num':
+                {
+                    required: true,
+                    isPhone: true
+                },
+                'contact':
+                {
+                    required: true
+                },
+                'license-num': {
+                    required: true
+                }
+            },
+            messages: {
+                'contact-num':{
+                    required:'联系电话不能为空',
+                    isPhone:'请输入正确的联系电话'
+                },
+                'contact':{
+                    required: '联系人不能为空'
+                },
+                'license-num': {
+                    required: '营业执照注册号不能为空'
+                }
+            }
+        });
+        $("#apply-form").submit(function (form, action) {
+            if (true == form.result) {
+                $('.set-phone-btn').text('提交中...');
+                $('.reset-btn').css('disabled', 'disabled');
+            }
+        })
+    })
+
+</script>
+</body>
+</html>

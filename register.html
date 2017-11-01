@@ -1,0 +1,214 @@
+<!DOCTYPE HTML>
+<!--[if lt IE 7]>
+<html class="ie6" lang="zh-cn"><![endif]-->
+<!--[if IE 7]>
+<html class="ie7" lang="zh-cn"><![endif]-->
+<!--[if IE 8]>
+<html class="ie8" lang="zh-cn"><![endif]-->
+<!--[if IE 9]>
+<html class="ie9" lang="zh-cn"><![endif]-->
+<!--[if gt IE 9]>
+<html lang="zh-cn"><![endif]-->
+<!--[if !IE]>-->
+<html lang="zh-cn"><!--<![endif]-->
+<head>
+    <!--meta.jsp-->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content=""/>
+    <meta name="keywords" content="MCCMS前端集成, 关键字"/>
+    <meta name="author" content="Christina"/>
+    <title>佣兵小镇</title>
+    <link rel="stylesheet" type="text/css" href="image/style.css">
+    <link rel="stylesheet" type="text/css" href="image/H-ui.min.css"/>
+    <link rel="stylesheet" type="text/css" href="image/Hui-iconfont/iconfont.css"/>
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/jquery.placeholder.min.js"></script>
+    <script src="js/ie10-viewport-bug-workaround.js"></script>
+    <script src="js/jquery.validate.min.js"></script>
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.min.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+    <noscript>您的浏览器不支持JavaScript，请启动JavaScript或更换浏览器</noscript>
+    <!--end of meta.jsp-->
+</head>
+<body>
+<div class="header">
+    <span class="area">广州</span><span class="changeArea">[切换地区]</span>
+    <ul>
+        <li><a class="rborder" href="index.html">首页</a></li>
+        <li><a class="rborder" href="join-us.html">加入我们</a></li>
+        <li><a class="rborder" href="about-us.html">关于我们</a></li>
+        <li><a class="login" href="login.html">企业登录</a></li>
+    </ul>
+</div>
+<div class="register-bg">
+    <div class="main-container">
+        <!-- register-->
+        <form id="reg-form" method="POST" action="login.html">
+            <div class="register-wrap">
+                <div class="register-t">用户注册</div>
+                <div class="register-c">
+                    <div class="reg-tip-title"><i class="Hui-iconfont">&#xe601;</i>企业或机构</div>
+                    <div class="reg-tip">企业或机构：用来发布真实可靠的任务，认证成功后可直接 发布，无需审核。<span class="reg-triangle"></span></div>
+                    <div class="ipt-wrap">
+                        <label for="phone-num" class="lab">手机号：</label>
+                        <input type="text" class="ipt" id="phone-num" name="phone-num" placeholder="请输入手机号码" autocomplete="off">
+                    </div>
+                    <div class="ipt-wrap">
+                        <label for="pic-check" class="lab">图形验证码：</label>
+                        <input type="text" class="ipt reg-code" id="pic-check" name="pic-check" placeholder="点击查看验证码" autocomplete="off">
+                        <img src="image/code.png"  class="get-code fl">
+                    </div>
+                    <div class="ipt-wrap">
+                        <label for="msg-check" class="lab">短信验证码：</label>
+                        <input type="text" class="ipt reg-code" id="msg-check" name="msg-check" placeholder="输入验证码" autocomplete="off">
+                        <button type="button" class="get-code fl" id="get-code">获取验证码</button>
+                    </div>
+                    <div class="ipt-wrap">
+                        <label for="reg-pwd" class="lab">密码：</label>
+                        <input class="ipt" type="password" name="reg-pwd" placeholder="请输入密码" id="reg-pwd"
+                               autocomplete="off" onselectstart="return false;" ondragenter="return false;"
+                               onpaste="return false;">
+                    </div>
+                    <div class="ipt-wrap">
+                        <label for="reg-repwd" class="lab">确认密码：</label>
+                        <input class="ipt" type="password" name="reg-repwd" placeholder="请确认密码" id="reg-repwd"
+                               autocomplete="off" onselectstart="return false;" ondragenter="return false;"
+                               onpaste="return false;">
+                    </div>
+                    <div class="ipt-wrap" id="city_select">
+                        <label class="lab">地区：</label>
+                        <select name="area" class="prov slt"></select>
+                        <select name="area" class="city slt" disabled="disabled"></select>
+                        <select name="area" class="dist slt" disabled="disabled"></select>
+                    </div>
+                    <div class="ipt-wrap">
+                        <label for="tissue-name" class="lab">组织名字：</label>
+                        <input type="text" class="ipt" id="tissue-name" name="tissue-name" placeholder="请填写机构或团队的名字" autocomplete="off">
+                    </div>
+                    <div class="ipt-wrap">
+                        <label for="reg-mail" class="lab">专用邮箱：</label>
+                        <input type="text" class="ipt" id="reg-mail" name="reg-mail" placeholder="请填写专用邮箱" autocomplete="off">
+                    </div>
+                    <div class="reg-item"><input type="checkbox" id="item" name="item"><label for="item">我接受佣兵小镇<a
+                            href="javascript:void(0)">《服务条款》</a></label></div>
+                    <button class="register-btn" onclick="$('#reg-form').submit()">立即注册</button>
+                </div>
+            </div>
+        </form>
+        <!-- end of register-->
+        <div class="register-title"><img src="image/login-title.png"></div>
+    </div>
+</div>
+<div class="footer bgc-w">
+    <p>版权信息：京ICP备12038410号-5 版权声明：佣兵小镇有限责任公司版权所有</p>
+</div>
+<!--地址联动js-->
+<script type="text/javascript" src="js/cityselect/jquery.cityselect.js"></script>
+<script type="text/javascript">
+    $(function(){
+        $("#city_select").citySelect({
+            prov:"北京",
+            city:"东城区",
+            dist:"",
+            nodata:"none"
+        });
+    });
+</script>
+<!--表单验证-->
+<script type="text/javascript">
+    $("document").ready(function(){
+        jQuery.validator.addMethod("isMobile", function(value, element) {
+            var length = value.length;
+            return this.optional(element) || (length == 11 && /^(((13[0-9]{1})|(15[0-9]{1})|(18[0-9]{1}))+\d{8})$/.test(value));
+        }, "请正确填写您的手机号码");
+
+        $("#reg-form").validate({
+            onfocusout: function(element) { $(element).valid();},
+            onkeyup:false,
+            rules: {
+                'phone-num':
+                {
+                    required: true,
+                    isMobile: true
+                },
+                'pic-check':
+                {
+                    required: true
+                },
+                'msg-check':
+                {
+                    required: true
+                },
+                'reg-pwd':
+                {
+                    required: true,
+                    minlength: 6,
+                    maxlength: 16
+                },
+                'reg-repwd': {
+                    required: true,
+                    equalTo: "#reg-pwd"
+                },
+                'tissue-name': {
+                    required: true
+                },
+                'reg-mail': {
+                    required: true,
+                    email: true
+                },
+                'item': {
+                    required: true
+                }
+
+            },
+            messages: {
+                'phone-num':{
+                    required:'手机号码不能为空',
+                    isMobile:'请输入正确的手机号码'
+                },
+                'pic-check':{
+                    required:'图形验证码不能为空'
+                },
+                'msg-check':{
+                    required:'短信验证码不能为空'
+                },
+                'reg-pwd':{
+                    required: '注册密码不能为空',
+                    minlength:'密码为6-16位，只能使用字母、数字与下划线',
+                    maxlength:'密码为6-16位,只能使用字母、数字与下划线'
+                },
+                'reg-repwd': {
+                    required: '确认密码不能为空',
+                    equalTo: '与注册密码输入不相同'
+                },
+                'tissue-name': {
+                    required: '组织名字不能为空'
+                },
+                'reg-mail': {
+                    required: '专用邮箱不能为空',
+                    email: '邮箱格式不正确'
+                },
+                'item':{
+                    required: "您没有接受服务条款"
+                }
+
+            }
+//            submitHandler:function(form) { $(form).submit();} //验证成功则提交
+        });
+        $("#reg-form").submit(function (form,action) {
+            if (true == form.result) {
+                $('.register-btn').val('提交中...');
+                $('.register-btn').css('disabled','disabled');
+            }
+        })
+    })
+
+</script>
+</body>
+</html>

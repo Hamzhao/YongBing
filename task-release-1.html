@@ -1,0 +1,491 @@
+<!DOCTYPE HTML>
+<!--[if lt IE 7]>
+<html class="ie6" lang="zh-cn"><![endif]-->
+<!--[if IE 7]>
+<html class="ie7" lang="zh-cn"><![endif]-->
+<!--[if IE 8]>
+<html class="ie8" lang="zh-cn"><![endif]-->
+<!--[if IE 9]>
+<html class="ie9" lang="zh-cn"><![endif]-->
+<!--[if gt IE 9]>
+<html lang="zh-cn"><![endif]-->
+<!--[if !IE]>-->
+<html lang="zh-cn"><!--<![endif]-->
+<head>
+    <!--meta.jsp-->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content=""/>
+    <meta name="keywords" content="MCCMS前端集成, 关键字"/>
+    <meta name="author" content="Christina"/>
+    <title>  </title>
+    <link rel="stylesheet" type="text/css" href="image/style.css">
+    <link rel="stylesheet" type="text/css" href="image/H-ui.min.css"/>
+    <link rel="stylesheet" type="text/css" href="image/Hui-iconfont/iconfont.css"/>
+    <script src="js/jquery-1.11.3.min.js"></script>
+	<script src="js/common.js"></script>
+	<script src="js/jquery.placeholder.min.js"></script>
+    <script src="js/ie10-viewport-bug-workaround.js"></script>
+    <script src="js/jquery.validate.min.js"></script>
+    <script src="js/laydate/laydate.js" type="text/javascript" charset="utf-8"></script>
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.min.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+    <noscript>您的浏览器不支持JavaScript，请启动JavaScript或更换浏览器</noscript>
+    <!--end of meta.jsp-->
+</head>
+	<body>
+		<div class="header">
+			<span class="area" style="visibility: hidden;">广州</span><span class="changeArea" style="visibility: hidden;">[切换地区]</span>
+			<ul>
+				<li><a class="rborder" href="javascript:void(0)" onClick="alert('首页');">首页</a></li>
+				<li><a class="rborder" href="javascript:void(0)" onClick="alert('加入我们');">加入我们</a></li>
+				<li><a class="rborder" href="javascript:void(0)" onClick="alert('关于我们');">关于我们</a></li>
+				<li><a class="login" href="javascript:void(0)" onClick="alert('企业登录');">企业登录</a></li>
+			</ul>
+		</div>
+		<div class="title">
+			<div class="content">
+				<span class="text"><img src="image/task_phone.png"/>佣兵小镇任务管理平台 | 发布佣兵任务</span>
+			</div>
+		</div>
+		<div class="main">
+			<div class="nav">佣兵小镇任务管理平台 > <a href="">发布佣兵任务</a></div>
+			<div class="fill-in">
+				<div class="schedule">
+					<img src="image/step1.png"/>
+				</div>
+				<div class="ties">注：佣兵任务是指对方用手机操作（文本、图片、下载等）就能完成的任务，如收集门店照片，应用市场点评，软文转发推广，新产品试用等等<span>×</span></div>
+				<form id="rform" action="task-release-2.html">
+					<p class="tt">填写基本信息<a href="">《佣兵任务发布须知》</a></p>
+					<div class="int">
+						<label><span class="c-red">*</span>任务类型：</label>
+						<select name="rtype" class="radius w-100">
+							<option value="0">请选择</option>
+							<option value="">派单</option>
+							<option value="">送货</option>
+						</select><i class="rtype"></i>
+					</div>
+					<div class="int">
+						<label><span class="c-red">*</span>性别：</label>
+						<select name="rsex" class="radius w-100">
+							<option value="0">不限</option>
+							<option value="">男</option>
+							<option value="">女</option>
+						</select><i class="rsex"></i>
+					</div>
+					<div class="int">
+						<label><span class="c-red">*</span>任务单价：</label>
+						<input class="radius w-200" type="text" name="rprice" required min="1" max="10000" placeholder="请输入任务单价金额，如：9元"/><span> 元  </span><i class="rprice"><img src="image/icon2.png"/></i>
+					</div>
+					<div class="int">
+						<label><span class="c-red">*</span>任务数量：</label>
+						<input class="radius w-200" type="text" name="rnumber" placeholder="请输入发布任务数量，如：1000" required min="100" max="100000"/> 个<i class="rnumber"></i>
+					</div>
+					<div class="int">
+						<label>审核周期：</label>
+						<input class="radius w-200" type="text" name="rtime" id="" placeholder="24" required min="1" max="48"/><span>小时</span><i class="rtime"><img src="image/icon2.png" /></i>
+					</div>
+					<div class="int">
+						<label><span class="c-red">*</span>开始时间：</label>
+						<input class="radius w-200 laydate-icon" type="datetime" name="begintime" id="begintime" placeholder="请输选择任务开始时间" required/><i class="begintime"><img src="image/icon2.png" /></i>
+					</div>
+					<div class="int">
+						<label><span class="c-red">*</span>截止时间：</label>
+						<input class="radius w-200 laydate-icon" type="text" name="endtime" id="endtime" placeholder="请输选择任务截止时间" required /><i class="endtime"><img src="image/icon2.png" /></i>
+					</div>
+					<div class="int">
+						<label><span class="c-red">*</span>佣兵要求：</label>
+						<select name="ryaoqiu" class="radius w-100">
+							<option value="0">实名验证</option>
+							<option value="">无</option>
+							<option value="">无</option>
+						</select><i class="ryaoqiu"></i>
+					</div>
+					<div class="int" id="area-select">
+						<label><span class="c-red">*</span>选择城市：</label>
+						<select name="area" class="prov slt"></select>
+                        <select name="area" class="city slt" disabled="disabled"></select>
+                        <select name="area" class="dist slt" disabled="disabled"></select>
+					</div>
+					<div class="int">
+						<label>设备选择：</label>
+						<input type="radio" name="device" checked />不限
+						<input type="radio" name="device" />仅限IOS系统设备
+						<input type="radio" name="device" />仅限Android系统设备
+					</div>
+					<div class="int">
+						<label>任务限制：</label>
+						<input type="radio" name="task" checked/>每人限一次
+						<input type="radio" name="task" />每天限一次
+						<input type="radio" name="task" />不限次数
+					</div>
+					<div class="int">
+						<label><span class="c-red">*</span>限制报名：</label>
+						<select name="rlimit" class="radius w-200">
+							<option value="0">请选择需限制的佣兵任务</option>
+							<option value="">漏电检测</option>
+							<option value="">灾难抢险</option>
+						</select><i class="rlimit"></i>
+					</div>
+					<p class="tt">任务描述</p>
+					<div class="int">
+						<label><span class="c-red">*</span>任务标题：</label>
+						<input class="radius w-200" type="text" name="title" id="" placeholder="请输入佣兵任务的标题"/><i class="title" style="display: inline-block;width: 15px;padding: 0;"><img src="image/icon2.png"/></i>
+					</div>
+					<div class="int">
+						<label><span class="c-red">*</span>任务描述：</label>
+						<textarea class="radius" name="rdepict" placeholder="请输入佣兵任务的描述" required></textarea><i class="rdepict"></i>
+					</div>
+					<div class="int">
+						<label>Logo：</label>
+						<span id="showImg2" onclick="document.getElementById('file2').click();">
+							<img src="image/upload-img.png" width="120" height="120"/>
+						</span>
+						<br />
+						<input type="file" name="file" id="file2" accept=".jpg,.jpeg,.png" onchange="showLogo(this,'showImg2')"/>
+						<a class="bluebtn radius w-100 marginl-85" style="margin-bottom: 30px;" onclick="document.getElementById('file2').click();">选择Logo</a>
+					</div>
+					<div class="int">
+						<label>任务展示：<strong class="c-red">最多6张</strong></label>
+						<span id="showImg"></span>
+						<br />
+						<input type="file" name="file" id="file" accept=".jpg,.jpeg,.png" onchange="showPreview(this,'showImg')"/>
+						<a class="bluebtn radius w-100 marginl-85" style="margin-bottom: 30px;" onclick="document.getElementById('file').click();">选择图片</a>
+					</div>
+					<p class="tt">任务提交步骤</p>
+					<div class="int submit_step">
+						<div>
+							<a class="w-150 bluebtn radius marginl-85 step-btn">步骤1（链接操作）</a>
+							<span class="w-30 bluebtn radius Hui-iconfont delect">&#xe6a6;</span>
+						</div>
+						<div>
+							<a class="w-150 bluebtn radius marginl-85 step-btn">步骤2（图文说明）</a>
+							<span class="w-30 bluebtn radius Hui-iconfont delect">&#xe6a6;</span>
+						</div>
+						<div>
+							<a class="w-150 bluebtn radius marginl-85 step-btn">步骤3（文本输入）</a>
+							<span class="w-30 bluebtn radius Hui-iconfont delect">&#xe6a6;</span>
+						</div>
+						<div>
+							<a class="w-150 bluebtn radius marginl-85 step-btn">步骤4（链接操作）</a>
+							<span class="w-30 bluebtn radius Hui-iconfont delect">&#xe6a6;</span>
+						</div>
+						<button id="addStep" class="Hui-iconfont radius add marginl-85" onclick="return false;">&#xe600; 添加执行步骤</button>
+						<button class="Hui-iconfont radius preview" onclick="return false;">&#xe695; 预览佣兵任务</button>
+					</div>
+					<input type="submit" id="submit" class="btn radius marginl-85" value="提交任务"/>
+					<br />
+					<div class="checkbox">
+						<input type="checkbox" name="ritem" class="marginl-85"/><span>同意<a href="" style="color: #3c98c0;">《佣兵任务发布须知》</a><i class="ritem"></i></span>
+					</div>
+				</form>
+			</div>
+			<div class="add-step">
+				<div class="add-bg"></div>
+				<div class="S-add">
+					<div class="tt">
+						<span>提供</span><span class="right">×</span>
+					</div>
+					<form>
+						<div class="int">
+							<label><span class="c-red">*</span>步骤类型：</label>
+							<select id="operation" class="w-200">
+								<option>链接操作</option>
+								<option>图文说明</option>
+								<option>文本输入</option>
+								<option>图片提交</option>
+							</select>
+						</div>
+						<div class="int">
+							<span class="ts">如上传app应用市场评论截图等如上传app应用市场评</span>
+						</div>
+						<div class="select-operation s-link">
+							<div class="int">
+								<label><span class="c-red">*</span>步骤说明：</label>
+								<textarea placeholder="请输入步骤说明"></textarea>
+							</div>
+							<div class="int">
+								<label><span class="c-red">*</span>链接输入：</label>
+								<input type="text"  id="url-input"/>
+							</div>
+						</div>
+						<div class="select-operation s-pictxt" style="display: none;">
+							<div class="int">
+								<label><span class="c-red">*</span>步骤说明：</label>
+								<textarea placeholder="请输入步骤说明"></textarea>
+							</div>
+							<div class="int">
+								<label><span class="c-red">*</span>图片说明：</label>
+								<span id="showimg" style="display: inline-block;height: 50px;padding: 10px 0 10px 10px;"></span>
+								<input type="file" name="file" id="file2" accept=".jpg,.jpeg,.png" onchange="showPreview(this,'showimg')" style="display: none;"/>
+								<a class="bluebtn radius w-100 " style="margin-bottom: 30px;display: inline-block;background: #64bde5;color: white;text-align: center;line-height: 30px;" onclick="document.getElementById('file2').click();">选择图片</a>
+							</div>
+						</div>
+						<div class="select-operation s-txt" style="display: none;">
+							<div class="int">
+								<label><span class="c-red">*</span>步骤说明：</label>
+								<textarea placeholder="请输入步骤说明"></textarea>
+							</div>
+							<div class="int">
+								<label><span class="c-red">*</span>步骤提交：</label><span style="font-size: 14px;">由任务处理者提供对应的长文本输入</span>
+							</div>
+						</div>
+						<div class="select-operation s-pic" style="display: none;">
+							<div class="int">
+								<label><span class="c-red">*</span>步骤说明：</label>
+								<textarea placeholder="请输入步骤说明"></textarea>
+							</div>
+							<div class="int">
+								<label><span class="c-red">*</span>步骤提交：</label><span style="font-size: 14px;">由任务处理者提供相关图片</span>
+							</div>
+						</div>
+						<input id="add-step" type="submit" value="确定提交" onclick="return false;"/>
+					</form>
+				</div>
+			</div>
+			<div class="preview-step">
+				<div class="add-bg"></div>
+				<div class="S-add pos-r">
+					<div class="tt">
+						<span>提供</span><span class="right" style="cursor: pointer;">×</span>
+					</div>
+					<div class="schd text-c">1/4</div>
+					<div class="cnt text-c">
+						<p>点击下方按钮打开链接</p>
+						<button>打开链接</button>
+					</div>
+					<dl class="illustrate">
+						<dt>步骤说明：</dt>
+						<dd>点击登录</dd>
+					</dl>
+					<dl class="attention">
+						<dt>注意：</dt>
+						<dd>请认真阅读任务说明，并严格按照任务要求完成任务。
+请注意您的流量，建议您在WiFi环境下完成下载。
+任务需要在2个小时内完成哦，加油吧！么么哒>3<</dd>
+					</dl>
+					<div class="btns pos-a">
+						<ul>
+							<li class="current"></li>
+							<li></li>
+							<li></li>
+							<li></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="footer">
+			<p>版权信息：京ICP备12038410号-5  版权声明：佣兵小镇有限责任公司版权所有</p>
+		</div>
+		<!--地址联动js-->
+		<script type="text/javascript" src="js/cityselect/jquery.cityselect.js"></script>
+		<script type="text/javascript">
+		    $(function(){
+		        $("#area-select").citySelect({
+		            prov:"北京",
+		            city:"东城区",
+		            dist:"",
+		            nodata:"none"
+		        });
+		    });
+		</script>
+		<script type="text/javascript">
+			/*上传logo前预览图片*/
+			function showLogo(source,obj) {
+			        var file = source.files[0];
+			        var show = document.getElementById(obj);
+			        var Img = document.createElement("img");
+			        show.innerHTML = '';
+			        if (window.FileReader) {
+			            var fr = new FileReader();
+			            if (!/image\/\w+/.test(file.type)) {
+			                alert("请确保文件为图像类型");
+			                return false;
+			            };
+			            Img.setAttribute("style","width:120px;height:120px;")
+			            show.appendChild(Img);
+			            var imgs = document.getElementById(obj).querySelectorAll('img');
+			            fr.onloadend = function (e) {
+			                imgs[imgs.length - 1].src = e.target.result;
+			            }
+			            fr.readAsDataURL(file);
+			        }
+			}
+			
+			
+			/*点击事件*/
+			$(".ties span").click(function(){
+				$(this).parent().css("display","none");
+			});
+			$(".add-step .right").click(function(){
+				$(".add-step").css("display","none");
+			})
+			$(".preview-step .right").click(function(){
+				$(".preview-step").css("display","none");
+			})
+			$(".submit_step .preview").click(function(){
+				$(".preview-step").css("display","block");
+			})
+			$(".btns li").click(function(){
+				$(".btns li").removeClass("current");
+				$(this).addClass("current");
+			});
+			$(document).on("click","#showImg img",function(){
+				$(this).remove();
+			});
+			/*添加任务步骤*/
+			$('#addStep').click(function (){
+				$(this).before('<div><a class="w-150 bluebtn radius marginl-85 step-btn">步骤1（链接操作）</a> <span class="w-30 bluebtn radius Hui-iconfont delect">&#xe6a6;</span></div>')
+			});
+			$(document).on('click','.submit_step span',function(){
+				$(this).parent().remove();
+			});
+			$(document).on('click','.submit_step a.step-btn',function(){
+				$(".add-step").css("display","block");
+			});
+			/*选择框内容变化*/
+			$("#operation").change(function(){
+				$(".select-operation").hide();
+				if($(this).val()=='链接操作'){
+					$('.s-link').show();
+				}
+				if($(this).val()=='图文说明'){
+					$('.s-pictxt').show();
+				}
+				if($(this).val()=='文本输入'){
+					$('.s-txt').show();
+				}
+				if($(this).val()=='图片提交'){
+					$('.s-pic').show();
+				}
+			})
+			/*上传前预览图片*/
+			function showPreview(source,obj) {
+			        var file = source.files[0];
+			        var show = document.getElementById(obj);
+			        var Img = document.createElement("img");
+			        if (window.FileReader) {
+			            var fr = new FileReader();
+			            if (!/image\/\w+/.test(file.type)) {
+			                alert("请确保文件为图像类型");
+			                return false;
+			            };
+			            if (document.querySelectorAll("#"+obj+" img").length > 5) {
+			                alert("最多只允许上传6张！");
+			                return false;
+			            };
+			            show.appendChild(Img);
+			            var imgs = document.getElementById(obj).querySelectorAll('img');
+			            fr.onloadend = function (e) {
+			                imgs[imgs.length - 1].src = e.target.result;
+			            }
+			            fr.readAsDataURL(file);
+			        }
+			}
+			/*日历插件调用*/
+			laydate({
+				elem: '#begintime', //目标元素。
+				event: 'focus' ,//响应事件。如果没有传入event，则按照默认的click
+				min: laydate.now(), //设定最小日期为当前日期
+			});
+			laydate({
+				elem: '#endtime', //目标元素。
+				event: 'focus' ,//响应事件。如果没有传入event，则按照默认的click
+				min: laydate.now(+1), //设定最小日期为当前日期
+			});
+			$().ready(function() {
+				/* 设置默认属性 */       
+				$.validator.setDefaults({       
+				    submitHandler: function(form) {    
+				        form.submit();    
+				    }       
+				});
+				// 日期格式验证       
+				jQuery.validator.addMethod("isDate", function(value, element) {       
+				   var dt = /^((((19|20)\d{2})-(0?(1|[3-9])|1[012])-(0?[1-9]|[12]\d|30))|(((19|20)\d{2})-(0?[13578]|1[02])-31)|(((19|20)\d{2})-0?2-(0?[1-9]|1\d|2[0-8]))|((((19|20)([13579][26]|[2468][048]|0[48]))|(2000))-0?2-29))$/;    
+				    return this.optional(element) || (dt.test(value));       
+				}, "请正确填写日期");
+				
+				// 下拉框
+				jQuery.validator.addMethod("selectNone", function(value, element) {
+	    			return value != "0";
+				}, "必须选择一项");
+				
+				// 在键盘按下并释放及提交后验证提交表单
+				  $("#rform").validate({
+				  		errorPlacement: function(error, element) {
+	                    // Append error within linked label
+	                    $( element )
+	                            .closest( "form" )
+	                            .find( "i[class='"+element.attr( "name" )+"']" )
+	                            .after( error );
+	               		},
+				    rules: {
+					    rtype:{
+					    	selectNone:true,
+					    },
+					    rlimit:{
+					    	selectNone:true,
+					    },
+					    rtitle:{
+				        	required: true,
+				        	maxlength: 20,
+					    },
+					    rdepict:{
+				        	required: true,
+				        	minlength: 10,
+				        	maxlength: 100,
+					    },
+					    begintime:{
+					    	isDate:true,
+					    },
+					    endtime:{
+				    		isDate:true,
+				    	},
+				    	ritem:"required"
+				    },
+					    messages: {
+					      rprice: {
+					        required: "请输入任务单价金额",
+					        min: "任务单价不能小于1",
+					        max: "任务单价不能超过10000"
+					      },
+					      rnumber: {
+					        required: "请输入发布任务数量",
+					        min: "任务数量不能小于100",
+					        max: "任务数量不能超过100000"
+					      },
+					      rtime: {
+					        required: "请输入审核周期",
+					        min: "审核时长不能小于1小时",
+					        max: "审核时长不能大于48小时"
+					      },
+					      rtitle: {
+					        required: "请输入任务标题",
+					        maxlength: "请输入20字以内的任务标题"
+					      },
+					      rdepict: {
+					        required: "请输入任务描述",
+					        minlength: "请输入10-100以内的任务标题",
+					        maxlength: "请输入10-100以内的任务标题"
+					      },
+					      begintime: {
+					        required: "请输入或选择任务开始时间",
+					        isDate:"请输入正确的日期格式：XXXX-XX-XX"
+					      },
+					      endtime: {
+					        required: "请输入或选择任务截止时间",
+					        isDate:"请输入正确的日期格式：XXXX-XX-XX"
+					      },
+					      ritem:"请接受我们的须知",
+					    }
+					});
+			});
+		</script>
+	</body>
+</html>
